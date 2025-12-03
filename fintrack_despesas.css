@@ -1,0 +1,129 @@
+/* ==========================================================
+   VARIÁVEIS DE COR FINTRACK
+   ========================================================== */
+:root {
+    --fintrack-blue: #3665A3;       /* Azul Principal */
+    --fintrack-green: #A3CF5D;      /* Verde Principal (FAB/Gráfico) */
+    --fintrack-light-green: #CCFF99; /* Verde Claro (Botões inativos) */
+    --fintrack-active-blue: #5B84B2; /* Azul Secundário (Botão ativo) */
+}
+
+/* ==========================================================
+   AJUSTES GERAIS E LAYOUT DA TELA
+   ========================================================== */
+
+body {
+    background-color: #f7f7f7;
+}
+
+/* Contêiner que limita a largura (simula um celular em tela grande) */
+.app-container-sim {
+    max-width: 500px;
+    margin: 20px auto; /* Centraliza */
+    min-height: 90vh;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    padding-bottom: 80px;
+}
+
+/* Título principal usa a cor azul do FinTrack */
+.app-container-sim .h4 {
+    color: var(--fintrack-blue);
+}
+
+/* ==========================================================
+   GRÁFICO
+   ========================================================== */
+
+.chart-visual {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    height: 180px;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    gap: 5px;
+    padding: 20px 15px;
+}
+
+.bar {
+    width: 12.5%;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+/* Cores personalizadas */
+.bar.bg-green { background-color: var(--fintrack-green) !important; }
+.bar.bg-blue { background-color: var(--fintrack-blue) !important; }
+
+/* ==========================================================
+   FILTROS (DIA/SEMANA/MÊS)
+   ========================================================== */
+
+.filter-btn {
+    border-radius: 20px !important;
+    font-weight: bold;
+}
+
+/* Botões inativos */
+.filter-btn-dia, .filter-btn-mes {
+    background-color: var(--fintrack-light-green);
+    color: var(--fintrack-blue);
+    border: none;
+}
+
+/* Botão ATIVO */
+.filter-btn-semana.active {
+    background-color: var(--fintrack-active-blue);
+    color: white;
+    border: none;
+    box-shadow: 0 0 0 3px rgba(54, 101, 163, 0.5); 
+}
+
+/* ==========================================================
+   LISTA DE DESPESAS
+   ========================================================== */
+
+.card-list {
+    border: 1px solid #e0e0e0;
+}
+
+.expense-item {
+    padding: 15px 20px;
+}
+
+/* Cor do valor */
+.expense-item .fw-bold {
+    color: var(--fintrack-blue) !important;
+}
+
+/* ==========================================================
+   BOTÃO FLUTUANTE DE AÇÃO (FAB)
+   ========================================================== */
+
+.fab-btn {
+    position: absolute; 
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--fintrack-green);
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    z-index: 10;
+}
+
+@media (min-width: 500px) {
+    .fab-btn {
+        right: calc(50% - 250px + 20px);
+    }
+}
